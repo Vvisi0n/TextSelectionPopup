@@ -208,9 +208,9 @@ TsPopup/
 
 ## 📞 联系 / Contact
 
-- 项目主页: [GitHub Repository]
-- 问题反馈: [Issues]
-- 邮箱: [Your Email]
+- 项目主页: [[GitHub Repository]](https://github.com/Vvisi0n/TextSelectionPopup.git)
+- 问题反馈: [[Issues]](https://github.com/Vvisi0n/TextSelectionPopup/issues)
+- 邮箱: 2478258536@qq.com
 
 ---
 
