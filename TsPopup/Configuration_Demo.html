@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Selection Popup Example</title>
+  <!-- Introducing the Font Awesome icon library -->
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Introduce a text selection pop-up library -->
+  <script src="TsPopup.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Microsoft Yahei", sans-serif;
+    }
+
+    body {
+      padding: 50px;
+      line-height: 1.8;
+      color: #333;
+      background-color: #f5f7fa;
+    }
+
+    .demo-text {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Sample text -->
+  <div class="demo-text">
+    <h3>划词弹窗演示</h3>
+    <p>请选中这段文字中的任意部分，会在鼠标位置弹出操作弹窗，包含复制、搜索、翻译等功能。点击弹窗外的区域会自动关闭弹窗。</p>
+    <p>划词弹窗（TextSelectionPopup）是常见的网页交互功能，广泛应用于阅读类、文档类网站，提升用户操作体验。</p>
+    <p>你可以根据需求扩展更多功能按钮，比如分享、收藏、标注等，只需在弹窗中添加对应的按钮并实现相应逻辑即可。</p>
+  </div>
+  <br>
+  <div class="demo-text">
+    <h3>Text Selection Popup Demo</h3>
+    <p>Select any part of this text, and an action popup will appear at the mouse position, containing functions like copy, search, and translate. Clicking outside the popup will automatically close it.</p>
+    <p>The Text Selection Popup is a common web interaction feature, widely used on reading and document-related websites to enhance user experience.</p>
+    <p>You can expand it with more function buttons according to your needs, such as share, favorite, or annotate, simply by adding the corresponding buttons to the popup and implementing the related logic.</p>
+  </div>
+
+  <script>
+    // Init text selection popup
+    const textSelectionPopup = new TextSelectionPopup({
+      // Can be customized,you do
+      buttons: [
+        {
+          id: 'copyBtn',
+          className: 'popup-btn copy',
+          tooltip: 'Copy',
+          icon: 'fas fa-copy',
+          action: function() {
+            // You can customize the copy logic here
+            textSelectionPopup.copyAction();
+          }
+        },
+        {
+          id: 'searchBtn',
+          className: 'popup-btn search',
+          tooltip: 'Search',
+          icon: 'fas fa-search',
+          action: function() {
+            textSelectionPopup.searchAction();
+          }
+        },
+        {
+          id: 'translateBtn',
+          className: 'popup-btn translate',
+          tooltip: 'Translate',
+          icon: 'fas fa-language',
+          action: function() {
+            textSelectionPopup.translateAction();
+          }
+        }
+      ],
+      // Can be customized the offset of the popup
+      offsetX: 10,
+      offsetY: 10
+    });
+
+    // Example: Add a custom button
+    // textSelectionPopup.addButton({
+    //   id: 'customBtn',
+    //   className: 'popup-btn custom',
+    //   tooltip: 'Custom Btn',
+    //   icon: 'fas fa-star',
+    //   action: function() {
+    //     alert('Custom Button Clicked: ' + textSelectionPopup.selectedText);
+    //     textSelectionPopup.hidePopup();
+    //   }
+    // });
+  </script>
+</body>
+</html>
